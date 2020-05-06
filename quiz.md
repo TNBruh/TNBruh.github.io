@@ -1,4 +1,5 @@
-#hard
+**hard**
+
 1. responsif
 
     membuat situs yang responsif lumayan susah. saya kurang mengeksplorasi isi materialize. tapi terkadang membuat bagian-bagian yang responsif secara manual juga dibutuhkan. ada bagian yang lebih baik menggunakan rem tetapi ada juga bagian yang lebih baik menggunakan %, dan seterusnya.
@@ -11,5 +12,6 @@
 
     sering sekali ada objek, khususnya gambar, yang mendadak keluar dari box. kemudian, saat di-debug, muncul bug lain. mencari sumbernya dan menulis ulang agar semua bug yang terlibat lumayan susah dikarenakan biasanya bug yang baru tidak hanya 1.
 
-#impossible
+**impossible**
+
 footer melayang di tengah pada layar tertentu. solusi-solusi yang saya coba cari selalu malah merusak seluruh situs. saya sudah pakai cara posisi absolute, flexbox, dan satu lagi saya lupa. tetapi ketiganya tidak ada yang bisa memaksa footer menempel dibawah.
