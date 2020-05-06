@@ -15,3 +15,9 @@
 **impossible**
 
 footer melayang di tengah pada layar tertentu. solusi-solusi yang saya coba cari selalu malah merusak seluruh situs. saya sudah pakai cara posisi absolute, flexbox, dan satu lagi saya lupa. tetapi ketiganya tidak ada yang bisa memaksa footer menempel dibawah.
+
+[register](https://cdn.discordapp.com/attachments/457421520625467403/707461442852487198/register.png)
+
+[main page setelah login](https://cdn.discordapp.com/attachments/457421520625467403/707461446547669002/Main.jpg)
+
+[login](https://cdn.discordapp.com/attachments/457421520625467403/707461458207965234/Login.png)
