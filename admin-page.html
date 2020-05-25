@@ -389,6 +389,7 @@
             function () {
 
                 if (isLoggedin()) {
+                    console.log("logged setup");
                     userPageSetup(document.getElementById("username"),
                         document.getElementById("profession"),
                         document.getElementById("type"),
@@ -402,6 +403,7 @@
                     )
                 }
                 else {
+                    console.log("setup");
                     navbarSetup(document.getElementById("main-page-nav"),
                         document.getElementById("jobs-page-nav"),
                         document.getElementById("edit-profile-page-nav"),

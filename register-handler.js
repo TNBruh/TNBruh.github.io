@@ -194,6 +194,8 @@ function logout() {
 }
 
 function isLoggedin() {
+    console.log("session storage");
+    console.log(typeof sessionStorage.getItem("Username"));
     if (typeof sessionStorage.getItem("Username") === String && sessionStorage.getItem("Username") != "") {
         return true;
     }
