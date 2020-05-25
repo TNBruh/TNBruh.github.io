@@ -12,11 +12,16 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Google SSO-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="532806672714-cvlv29fslt2o276jirr7k1lqoeeubsne.apps.googleusercontent.com">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     <title></title>
+
     <style>
         .showbox {
             border: 1px dotted black;
@@ -89,19 +94,37 @@
         #footer-text {
             font-size: 100%;
         }
+
+        #brand {
+            color: #fff;
+            font-size: 2.1rem;
+        }
+
+        #google-sign-in {
+            padding-left: 0px;
+            padding-right: 0px;
+            margin-bottom: 3%;
+        }
+
+        .g-signin2 {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
-    
+
     <div id="header-body-footer" class="">
         <header>
             <nav class="nav-wrapper indigo">
-                <img id="header-logo" src="Logo.png" alt="bruh" />
-                <a href="#!" class="brand-logo flow-text hide-on-small-only font-style">Azure's Embrace</a>
+                <img id="header-logo" class="left" src="Logo.png" alt="bruh" />
+                <a href="#!" id="brand" class="hide-on-small-only left font-style">Azure's Embrace</a>
                 <ul class="right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href=#>Jobs</a></li>
-                    <li><a href=#>Account</a></li>
+                    <li><a id="main-page-nav" href="main-page.html">Home</a></li>
+                    <li><a id="job-page-nav" href=#>Jobs</a></li>
+                    <li><a id="setting-page-nav" href=#>Account</a></li>
+                    <li><a id="help-page-nav" href="help-page.html">Help</a></li>
+                    <li><a id="admin-page-nav" href="admin-page.html">Admin</a></li>
+                    <li><a href="https://github.com/TNBruh/TNBruh.github.io/blob/master/quiz.md">Quiz</a></li>
                 </ul>
             </nav>
         </header>
@@ -110,14 +133,19 @@
                 <div class="col s12 m5 main-part-unit">
                     <h3 class="font-style">Glory to humanity!</h3>
                     <hr />
-                    <p class="flow-text hide-on-small-only font-style">
+                    <p class="flow-text font-style">
+                        (this is company profile)<br />
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <h3 class="font-style">Goals</h3>
+                    <hr />
+                    <p class="flow-text hide-on-small-only font-style">
+                        <ul>
+                            <li class="flow-text">Goal 1</li>
+                            <li class="flow-text">Goal 2</li>
+                            <li class="flow-text">Goal 3</li>
+                        </ul>
                     </p>
                 </div>
                 <div class="col s12 m5 flow-text offset-m2 main-part-unit">
@@ -133,14 +161,11 @@
                         </div>
                     </form>
                     <div class="row">
-                        <a href="main-page.html" class="waves-effect waves-light btn left indigo s5"><i class="material-icons left">send</i>Sign-in</a>
-                        <a href="register.html" class="waves-effect waves-light btn right indigo s5"><i class="material-icons left">mode_edit</i>Register</a>
-                        <a href="main-page.html" class="waves-effect waves-light btn left red s5"><i class="fab left fa-google"></i>Google</a>
-                        <a href="main-page.html" class="waves-effect waves-light btn right blue darken-4 s5"><i class="fab left fa-facebook"></i>Facebook</a>
-                        <a href="main-page.html" class="waves-effect waves-light btn blue lighten-3 left s5"><i class="fab left fa-twitter"></i>Twitter</a>
-                        <a href="main-page.html" class="waves-effect waves-light btn right black s5"><i class="fab left fa-github"></i>Github</a>
-                        <a href="github.com/TNBruh/TNBruh.github.io/blob/master/quiz.md" class="waves-effect waves-light btn black lighten-3 left s5">Quiz</a>
+                        <a href="main-page.html" class="col waves-effect waves-light btn left indigo s5"><i class="material-icons left">send</i>Login</a>
+                        <a href="register.html" class="col waves-effect waves-light btn right indigo s5"><i class="material-icons left">mode_edit</i>Register</a>
+                       
                     </div>
+
                 </div>
                 <div class="col s12 m12 flow-text" id="news-part">
                     <p class="font-style"> News </p>
@@ -184,7 +209,7 @@
             <footer class="row">
                 <div class="col s12">
                     <span class="right" id="footer-text">Address: Danau Matana street D.II No. 52</span>
-                    
+
                 </div>
             </footer>
         </div>
@@ -192,5 +217,52 @@
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="register-handler.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+            let profile = googleUser.getBasicProfile();
+            let id_token = googleUser.getAuthResponse().id_token
+            //console.log('ID: ' + profile.getId());
+            //console.log('Full Name: ' + profile.getName());
+            //console.log('Given Name: ' + profile.getGivenName());
+            //console.log('Family Name: ' + profile.getFamilyName());
+            //console.log('Image URL: ' + profile.getImageUrl());
+            //console.log('Email: ' + profile.getEmail());
+            console.log(id_token);
+            regRecord(id_token, profile.getName(), profile.getGivenName());
+            //sessionStorage.setItem("regSSO", "true");
+            alert("Data Stored. Proceed to register page.")
+            //location.replace("main-page.html");
+            gapi.auth2.getAuthInstance.signOut();
+        }
+        $(document).ready(
+            function () {
+                if (isLoggedin()) {
+                    userPageSetup(document.getElementById("username"),
+                        document.getElementById("profession"),
+                        document.getElementById("type"),
+                        document.getElementById("desc"));
+
+                    navbarLoggedSetup(document.getElementById("main-page-nav"),
+                        document.getElementById("jobs-page-nav"),
+                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("help-page-nav"),
+                        document.getElementById("admin-page-nav")
+                    )
+                }
+                else {
+                    navbarSetup(document.getElementById("main-page-nav"),
+                        document.getElementById("jobs-page-nav"),
+                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("help-page-nav"),
+                        document.getElementById("admin-page-nav"))
+                }
+            }
+        );
+        function GotoReg() {
+            location.replace("register.html");
+        }
+    </script>
+
 </body>
 </html>
