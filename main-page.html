@@ -243,7 +243,6 @@
     <script>
         $(document).ready(
             function () {
-                $("#logout-button").click(function () { logout() });
                 if (isLoggedin()) {
                     userPageSetup(document.getElementById("username"),
                         document.getElementById("profession"),
@@ -266,6 +265,8 @@
                 }
             }
         );
+
+        $("#logout-button").click(function () { logout() });
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {

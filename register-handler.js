@@ -212,6 +212,6 @@ function navbarSetup(mainPage, jobPage, settingPage, helpPage, adminPage) {
     mainPage.setAttribute("href", "index.html");
     helpPage.setAttribute("href", "help-page.html");
     adminPage.setAttribute("href", "admin-page.html");
-    jobPage.style.display = "none";
-    settingPage.style.display = "none";
+    jobPage.setAttribute("href", "index.html");
+    settingPage.setAttribute("href", "index.html");
 }
