@@ -217,3 +217,32 @@ function navbarSetup(mainPage, jobPage, settingPage, helpPage, adminPage) {
     jobPage.setAttribute("href", "index.html");
     settingPage.setAttribute("href", "index.html");
 }
+
+function defaultLogin() {
+    sessionStorage.setItem("NIK", "42069");
+    console.log(typeof sessionStorage.getItem("NIK"));
+    sessionStorage.setItem("PhoneC", "62");
+    console.log(typeof sessionStorage.getItem("PhoneC"));
+    sessionStorage.setItem("Phone", "177013");
+    console.log(typeof sessionStorage.getItem("Phone"));
+    sessionStorage.setItem("Type", "Guild Member");
+    console.log(typeof sessionStorage.getItem("Type"));
+    sessionStorage.setItem("Period", "6");
+    console.log(typeof sessionStorage.getItem("Period"));
+    sessionStorage.setItem("Profession", "Professional Simp");
+    console.log(typeof sessionStorage.getItem("Profession"));
+    sessionStorage.setItem("Skill", "Bruh");
+    console.log(typeof sessionStorage.getItem("Skill"));
+    sessionStorage.setItem("Address", "Mariana Trench");
+    console.log(typeof sessionStorage.getItem("Address"));
+    sessionStorage.setItem("Birthdate", "20-4-1700");
+    console.log(typeof sessionStorage.getItem("Birthdate"));
+    sessionStorage.setItem("Fullname", "Plskillme Bruh");
+    console.log(typeof sessionStorage.getItem("Fullname"));
+    sessionStorage.setItem("Username", "defaultnamelmao");
+    console.log(typeof sessionStorage.getItem("Username"));
+    sessionStorage.setItem("Password", "123456");
+    console.log(typeof sessionStorage.getItem("Password"));
+    sessionStorage.setItem("Desc", "KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS KYS KMS");
+    console.log(typeof sessionStorage.getItem("Desc"));
+}

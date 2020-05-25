@@ -137,7 +137,7 @@
                 <a href="#!" id="brand" class="hide-on-small-only left font-style">Azure's Embrace</a>
                 <ul class="right">
                     <li><a id="main-page-nav" href="main-page.html">Home</a></li>
-                    <li><a id="job-page-nav" href=#>Jobs</a></li>
+                    <li><a id="jobs-page-nav" href=#>Jobs</a></li>
                     <li><a id="setting-page-nav" href=#>Account</a></li>
                     <li><a id="help-page-nav" href="help-page.html">Help</a></li>
                     <li><a id="admin-page-nav" href="admin-page.html">Admin</a></li>
@@ -227,6 +227,45 @@
                         <a href="#" id="logout-button" class="waves-effect waves-light btn right red s5"><i class="material-icons left">exit_to_app</i>Logout</a>
                     </div>
                 </div>
+
+                <div class="col s12 m12 flow-text" id="news-part">
+                    <p class="font-style"> News </p>
+                    <div id="news">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-image">
+                                <img src="TEA.png">
+                            </div>
+                            <div class="card-content white-text">
+                                <span class="card-title font-style flow-text">The Epic of Alexander (TEA): Cleared!</span>
+                                <p class="font-style flow-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card blue-grey darken-1">
+                            <div class="card-image">
+                                <img src="raid.png">
+                            </div>
+                            <div class="card-content white-text">
+                                <span class="card-title font-style flow-text">Raid Re-schedule</span>
+                                <p class="font-style flow-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card blue-grey darken-1">
+                            <div class="card-image">
+                                <img src="firmament.jpg">
+                            </div>
+                            <div class="card-content white-text">
+                                <span class="card-title font-style flow-text">Project: Firmament</span>
+                                <p class="font-style flow-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <footer class="row">
                 <div class="col s12">
@@ -252,7 +291,7 @@
 
                     navbarLoggedSetup(document.getElementById("main-page-nav"),
                         document.getElementById("jobs-page-nav"),
-                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("setting-page-nav"),
                         document.getElementById("help-page-nav"),
                         document.getElementById("admin-page-nav")
                     )
@@ -262,7 +301,7 @@
                     console.log("setup");
                     navbarSetup(document.getElementById("main-page-nav"),
                         document.getElementById("jobs-page-nav"),
-                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("setting-page-nav"),
                         document.getElementById("help-page-nav"),
                         document.getElementById("admin-page-nav"));
                 }

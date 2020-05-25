@@ -29,10 +29,6 @@
             var elems = document.querySelectorAll('.chips');
             var instances = M.Chips.init(elems);
         });
-        $(document).ready(function () {
-            $('select').material_select();
-            $('.datepicker').datepicker({ format: "dd/mm/yyyy" });
-        });
     </script>
     <!---->
 
@@ -204,7 +200,7 @@
                 <a href="#!" id="brand" class="hide-on-small-only left font-style">Azure's Embrace</a>
                 <ul class="right">
                     <li><a id="main-page-nav" href="main-page.html">Home</a></li>
-                    <li><a id="job-page-nav" href=#>Jobs</a></li>
+                    <li><a id="jobs-page-nav" href=#>Jobs</a></li>
                     <li><a id="setting-page-nav" href=#>Account</a></li>
                     <li><a id="help-page-nav" href="help-page.html">Help</a></li>
                     <li><a id="admin-page-nav" href="admin-page.html">Admin</a></li>
@@ -250,13 +246,10 @@
                     <h3 class="font-style">Jobs Workflow</h3>
                     <hr />
                     <p class="flow-text hide-on-small-only font-style">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Head over to the Jobs page to either make or claim a job. <br />
+                        To take a job, you only need to click "Accept" on the job you want to do. Keep in mind that the job will then be not available to others.
+                        <br />
+                        You may post a job by filling out the form below the job list and submit it.
                     </p>
                 </div>
             </div>
@@ -277,10 +270,10 @@
                 <div class="col s12 m5 offset-m2 flow-text">
                     <ul class="collection with-header">
                         <li class="collection-header blue-grey darken-1 white-text">Ranks</li>
-                        <li class="collection-item avatar"><img src="deneb.png" alt="" class="circle">Stellar</li>
-                        <li class="collection-item avatar"><img src="susanowo.png" alt="" class="circle">Cloudian</li>
-                        <li class="collection-item avatar"><img src="wiraqo.png" alt="" class="circle">Earthbound</li>
-                        <li class="collection-item avatar"><img src="max.png" alt="" class="circle">Sanguine</li>
+                        <li class="collection-item avatar"><img src="deneb.png" alt="" class="circle">Stellar Platinum</li>
+                        <li class="collection-item avatar"><img src="susanowo.png" alt="" class="circle">Cloudian Gold</li>
+                        <li class="collection-item avatar"><img src="wiraqo.png" alt="" class="circle">Earthbound Silver</li>
+                        <li class="collection-item avatar"><img src="max.png" alt="" class="circle">Sanguine Bronze</li>
                     </ul>
                 </div>
             </div>
@@ -369,15 +362,9 @@
         $(document).ready(
             function () {
                 if (isLoggedin()) {
-                    console.log("logged setup");
-                    userPageSetup(document.getElementById("username"),
-                        document.getElementById("profession"),
-                        document.getElementById("type"),
-                        document.getElementById("desc"));
-
                     navbarLoggedSetup(document.getElementById("main-page-nav"),
                         document.getElementById("jobs-page-nav"),
-                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("setting-page-nav"),
                         document.getElementById("help-page-nav"),
                         document.getElementById("admin-page-nav")
                     )
@@ -386,7 +373,7 @@
                     console.log("setup");
                     navbarSetup(document.getElementById("main-page-nav"),
                         document.getElementById("jobs-page-nav"),
-                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("setting-page-nav"),
                         document.getElementById("help-page-nav"),
                         document.getElementById("admin-page-nav"))
                 }
