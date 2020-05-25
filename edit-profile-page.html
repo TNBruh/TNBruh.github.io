@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
@@ -12,18 +12,21 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Google SSO-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="532806672714-cvlv29fslt2o276jirr7k1lqoeeubsne.apps.googleusercontent.com">
 
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     <!---->
     <script type="text/javascript"
             src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
     </script>
-
+    <title></title>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.chips');
@@ -34,9 +37,6 @@
             //$('.datepicker').datepicker({ format: "dd/mm/yyyy" });
         });
     </script>
-    <!---->
-
-    <title></title>
     <style>
         .showbox {
             border: 1px dotted black;
@@ -115,13 +115,14 @@
             font-size: 2.1rem;
         }
 
-        #regBtn {
-        }
-
         #google-sign-in {
             padding-left: 0px;
             padding-right: 0px;
             margin-bottom: 3%;
+        }
+
+        .g-signin2 {
+            width: 100%;
         }
     </style>
 </head>
@@ -133,16 +134,17 @@
                 <img id="header-logo" class="left" src="Logo.png" alt="bruh" />
                 <a href="#!" id="brand" class="hide-on-small-only left font-style">Azure's Embrace</a>
                 <ul class="right">
-                    <li><a href="main-page.html">Home</a></li>
-                    <li><a href=#>Jobs</a></li>
-                    <li><a href=#>Account</a></li>
-                    <li><a href="help-page.html">Help</a></li>
-                    <li><a href="admin-page.html">Admin</a></li>
+                    <li><a id="main-page-nav" href="main-page.html">Home</a></li>
+                    <li><a id="job-page-nav" href=#>Jobs</a></li>
+                    <li><a id="setting-page-nav" href=#>Account</a></li>
+                    <li><a id="help-page-nav" href="help-page.html">Help</a></li>
+                    <li><a id="admin-page-nav" href="admin-page.html">Admin</a></li>
                     <li><a href="https://github.com/TNBruh/TNBruh.github.io/blob/master/quiz.md">Quiz</a></li>
                 </ul>
             </nav>
         </header>
         <div id="body-footer">
+
             <div id="main-part" class="container row">
                 <div class="col s12 m5 main-part-unit">
                     <div class="input-field col s12">
@@ -160,8 +162,8 @@
                     <div id="pp" class="input-field col s12">
                         <select id="inpType">
                             <option value="" disabled selected>Choose your option</option>
-                            <option value="Civilian">Civilian</option>
-                            <option value="Guild Member">Guild Member</option>
+                            <option value="civilian">Civilian</option>
+                            <option value="guild-member">Guild Member</option>
                         </select>
                         <label for="inpType">
                             Member Type
@@ -180,11 +182,15 @@
                         <label for="inpProfession">Profession</label>
                     </div>
                     <div class="input-field col s12">
-                        <div id="skill-set" class="chips chips-placeholder">
+                        <div id="skill-set" class="chips chips-initial">
                         </div>
                         <label for="skill-set">
                             Skill set
                         </label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="description" class="materialize-textarea"></textarea>
+                        <label for="description">Description</label>
                     </div>
                 </div>
                 <div class="col s12 m5 flow-text offset-m2 main-part-unit">
@@ -215,6 +221,17 @@
                             <input id="inpP2" type="password" class="validate">
                             <label for="inpP2">Re-enter Password</label>
                         </div>
+                        <div class="file-field input-field col s12">
+                            <div class="btn">
+                                <span>Browse</span>
+                                <input type="file" />
+                            </div>
+
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text"
+                                       placeholder="Picture" />
+                            </div>
+                        </div>
                     </form>
                     <div>
                         <form action="#" class="flow-text">
@@ -227,23 +244,18 @@
                         </form>
                     </div>
                     <div class="row">
-                        <a class="col waves-effect waves-light btn left indigo s5" id="regBtn"><i class="material-icons left">mode_edit</i>Register</a>
-                        <a href="main-page.html" class="col waves-effect waves-light btn right indigo s5"><i class="fab left fa-linkedin"></i>Linked In</a>
-                        <div id="google-sign-in" class="col s5" onclick="GotoReg">
-                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                        </div>
-                        <a href="main-page.html" class="col waves-effect waves-light btn right blue darken-4 s5"><i class="fab left fa-facebook"></i>Facebook</a>
-                        <a href="main-page.html" class="col waves-effect waves-light btn blue lighten-3 left s5"><i class="fab left fa-twitter"></i>Twitter</a>
-                        <a href="main-page.html" class="col waves-effect waves-light btn right black s5"><i class="fab left fa-github"></i>Github</a>
+                        <a class="col waves-effect waves-light btn left indigo s5">Save changes</a>
+                        <a class="col waves-effect waves-light btn right indigo s5">Clear all</a>
                     </div>
                     <div class="row">
-                        
+
                     </div>
                 </div>
             </div>
             <footer class="row">
                 <div class="col s12">
                     <span class="right" id="footer-text">Address: Danau Matana street D.II No. 52</span>
+
                 </div>
             </footer>
         </div>
@@ -253,6 +265,13 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="register-handler.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.chips');
+            var instances = M.Chips.init(elems);
+        });
+        function test() {
+            console.log("bruh");
+        }
         const Calendar = document.querySelector('.datepicker');
         M.Datepicker.init(Calendar, {
             format: 'dd-mmmm-yyyy',
@@ -264,69 +283,52 @@
             }
         })
         $('#regBtn').click(function () {
-            //console.log($("#inpNIK").val());
-            //console.log($("#inpPhoneC").val());
-            //console.log($("#inpPhone").val());
-            //console.log($("#inpType").val());
-            //console.log($("#inpJoinPeriod").val());
-            ///console.log($("#inpProfession").val());
-            //console.log(M.Chips.getInstance($('#skill-set')).chipsData); //note to self, this is a dict
-            //console.log($("#date").val());
-            //console.log($("#inpAddress").val());
-            //console.log($("#inpFullname").val());
-            //console.log($("#inpUsername").val());
-            //console.log($("#inpP").val());
-            //console.log($("#inpP2").val());
-            //console.log(document.getElementById("inpAutoGen").checked);
             validate($("#inpNIK").val(), $("#inpPhoneC").val(), $("#inpPhone").val(), $("#inpType").val(), $("#inpJoinPeriod").val(),
                 $("#inpProfession").val(), M.Chips.getInstance($('#skill-set')).chipsData, $("#date").val(), $("#inpAddress").val(),
                 $("#inpFullname").val(), $("#inpUsername").val(), $("#inpP").val(), $("#inpP2").val(), document.getElementById("inpAutoGen").checked)
         });
-        function onSignIn(googleUser) {
-            let profile = googleUser.getBasicProfile();
-            let id_token = googleUser.getAuthResponse().id_token
-            //console.log('ID: ' + profile.getId());
-            //console.log('Full Name: ' + profile.getName());
-            //console.log('Given Name: ' + profile.getGivenName());
-            //console.log('Family Name: ' + profile.getFamilyName());
-            //console.log('Image URL: ' + profile.getImageUrl());
-            //console.log('Email: ' + profile.getEmail());
-            //console.log(id_token);
-            regRecord(id_token, profile.getName(), profile.getGivenName());
-            //sessionStorage.setItem("regSSO", "true");
-            //alert("Data Stored. Proceed to register page.")
-            //location.replace("main-page.html");
-            regSetup(document.getElementById("inpNIK"), document.getElementById("inpFullname"), document.getElementById("inpUsername"));
-            //gapi.auth2.getAuthInstance.signOut();
-        }
         $(document).ready(function () {
-            if (sessionStorage.getItem("regSSO") == "true") {
-                sessionStorage.setItem("regSSO", "false");
-                regSetup(document.getElementById("inpNIK"),
-                    document.getElementById("inpFullname"),
-                    document.getElementById("inpUsername"));
+            editSetup(document.getElementById("inpNIK"), document.getElementById("inpPhoneC"), document.getElementById("inpPhone"), document.getElementById("inpType"), document.getElementById("inpJoinPeriod"),
+                document.getElementById("inpProfession"), 0, document.getElementById("date"), document.getElementById("inpAddress"),
+                document.getElementById("inpFullname"), document.getElementById("inpUsername"), document.getElementById("inpP"), document.getElementById("inpP2"), document.getElementById("inpAutoGen").checked,
+                document.getElementById("description"));
+            $('#inpType').val(sessionStorage.getItem("Type"));
+            let skillArray = sessionStorage.getItem("Skill");
+            let iData = []
+            for (i = 0; i < skillArray.length; i++) {
+                iData.push({ tag : skillArray[i] });
             }
-            if (isLoggedin()) {
-                userPageSetup(document.getElementById("username"),
-                    document.getElementById("profession"),
-                    document.getElementById("type"),
-                    document.getElementById("desc"));
-
-                navbarLoggedSetup(document.getElementById("main-page-nav"),
-                    document.getElementById("jobs-page-nav"),
-                    document.getElementById("edit-profile-page-nav"),
-                    document.getElementById("help-page-nav"),
-                    document.getElementById("admin-page-nav")
-                )
-            }
-            else {
-                navbarSetup(document.getElementById("main-page-nav"),
-                    document.getElementById("jobs-page-nav"),
-                    document.getElementById("edit-profile-page-nav"),
-                    document.getElementById("help-page-nav"),
-                    document.getElementById("admin-page-nav"))
-                }
+            //for (i = 0; i < iData.length; i++) {
+            //    M.Chips.getInstance($('#skill-set')).addChips(iData[i]);
+            //}
+            //let picker = $('.datepicker').pickadate().pickadate("picker");
+            //picker.set('select', sessionStorage.getItem("Date"), { format: 'dd-mm-yyyy' })
         })
+        $(document).ready(
+            function () {
+                if (isLoggedin()) {
+                    userPageSetup(document.getElementById("username"),
+                        document.getElementById("profession"),
+                        document.getElementById("type"),
+                        document.getElementById("desc"));
+
+                    navbarLoggedSetup(document.getElementById("main-page-nav"),
+                        document.getElementById("jobs-page-nav"),
+                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("help-page-nav"),
+                        document.getElementById("admin-page-nav")
+                    )
+                }
+                else {
+                    navbarSetup(document.getElementById("main-page-nav"),
+                        document.getElementById("jobs-page-nav"),
+                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("help-page-nav"),
+                        document.getElementById("admin-page-nav"))
+                }
+            }
+        );
     </script>
+
 </body>
 </html>

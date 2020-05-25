@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Google SSO-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="532806672714-cvlv29fslt2o276jirr7k1lqoeeubsne.apps.googleusercontent.com">
+
+    <!---->
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.chips');
+            var instances = M.Chips.init(elems);
+        });
+        $(document).ready(function () {
+            $('select').material_select();
+            $('.datepicker').datepicker({ format: "dd/mm/yyyy" });
+        });
+    </script>
+    <!---->
+
+    <title></title>
+    <style>
+        .showbox {
+            border: 1px dotted black;
+        }
+
+        #header-body-footer {
+            background-color: azure;
+            min-height: 100vh;
+        }
+
+        #body-footer {
+            margin-top: 5%;
+        }
+
+        header {
+        }
+
+        #header-logo {
+            height: 100%;
+            width: auto;
+        }
+
+        .h-margin-balance {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #main-part {
+        }
+
+        .main-part-unit {
+            box-sizing: content-box;
+        }
+
+        .font-style {
+            font-family: 'Century Gothic';
+        }
+
+        h3 {
+            margin-top: 0px;
+        }
+
+        .container {
+            width: 85%;
+        }
+
+        hr {
+            border-color: blue;
+        }
+
+        .btn {
+            min-width: 35%;
+            margin-top: 3%;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        footer {
+            margin-bottom: 0px !important;
+        }
+
+        #news {
+            max-height: 40vh;
+            overflow: auto;
+        }
+
+        .scrollable {
+            overflow: auto;
+        }
+
+        #news-part {
+        }
+
+        #footer-text {
+            font-size: 100%;
+        }
+
+        #jobs-list {
+            max-height: 40rem;
+        }
+
+        #members-list {
+            max-height: 35rem;
+        }
+
+        #profile-pic {
+            width: 100%;
+            height: auto;
+        }
+
+        #brief-profile {
+            max-height: 10%;
+            overflow: auto;
+        }
+
+        #profile {
+            height: 100%;
+        }
+
+        #desc {
+            height: 30vh;
+            overflow: auto;
+        }
+
+        #brand {
+            color: #fff;
+            font-size: 2.1rem;
+        }
+
+        .member-list-opt {
+            padding-bottom: 0vh !important;
+        }
+
+        #member-profile-pic {
+            width: 100%;
+            height: auto;
+        }
+
+        #member-brief-profile {
+            max-height: 10%;
+            overflow: auto;
+        }
+
+        #member-desc {
+            height: 30vh;
+            overflow: auto;
+        }
+
+        .collection-item {
+            line-height: 100% !important;
+        }
+
+        #management-part{
+            display:flex;
+        }
+
+        .management-member {
+            width: 30%;
+            border-radius: 5%;
+            background-color: aliceblue;
+        }
+
+        .gray-border {
+            border: 1px solid gray;
+            margin-bottom:3%;
+        }
+
+        .m-pic {
+            margin-top: 4%;
+            width: 40%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .card{
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-body-footer" class="">
+        <header>
+            <nav class="nav-wrapper indigo">
+                <img id="header-logo" class="left" src="Logo.png" alt="bruh" />
+                <a href="#!" id="brand" class="hide-on-small-only left font-style">Azure's Embrace</a>
+                <ul class="right">
+                    <li><a id="main-page-nav" href="main-page.html">Home</a></li>
+                    <li><a id="job-page-nav" href=#>Jobs</a></li>
+                    <li><a id="setting-page-nav" href=#>Account</a></li>
+                    <li><a id="help-page-nav" href="help-page.html">Help</a></li>
+                    <li><a id="admin-page-nav" href="admin-page.html">Admin</a></li>
+                    <li><a href="https://github.com/TNBruh/TNBruh.github.io/blob/master/quiz.md">Quiz</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="body-footer">
+            <div class="container row">
+                <div class="col s12">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-image">
+                            <img src="doma.png">
+                        </div>
+                        <div class="card-content white-text">
+                            <span class="card-title font-style flow-text">How to join?</span>
+                            Open the home page and click the register button. From there, you are asked to fill out
+                            the form. After you've finished, click the register button and you will be lead to your
+                            profile page. That's all!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container row">
+                <div class="col s12 m5 flow-text">
+                    <ul class="collection with-header">
+                        <li class="collection-header blue-grey darken-1 white-text">Jobs Criteria</li>
+                        <li class="collection-item">Jobs must not be illegal.</li>
+                        <li class="collection-item">You are not allowed to post more than 10 jobs per day.</li>
+                        <li class="collection-item">Do not use the jobs feature as your personal advertisement.</li>
+                        <li class="collection-item">Jobs section is strictly for jobs only and not any other of your personal means.</li>
+                    </ul>
+                </div>
+                <div class="col s12 m5 offset-m2 flow-text">
+                    <ul class="collection with-header">
+                        <li class="collection-header blue-grey darken-1 white-text">Minimum Rewards</li>
+                        <li class="collection-item">Must be at least be half of the minimum wage of where the job giver lives.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container row">
+                <div class="col s12">
+                    <h3 class="font-style">Jobs Workflow</h3>
+                    <hr />
+                    <p class="flow-text hide-on-small-only font-style">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+            <div class="container row">
+                <div class="col s12 m5">
+                    <h3 class="font-style">Early Benefits</h3>
+                    <hr />
+                    <p class="flow-text hide-on-small-only font-style">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="col s12 m5 offset-m2 flow-text">
+                    <ul class="collection with-header">
+                        <li class="collection-header blue-grey darken-1 white-text">Ranks</li>
+                        <li class="collection-item avatar"><img src="deneb.png" alt="" class="circle">Stellar</li>
+                        <li class="collection-item avatar"><img src="susanowo.png" alt="" class="circle">Cloudian</li>
+                        <li class="collection-item avatar"><img src="wiraqo.png" alt="" class="circle">Earthbound</li>
+                        <li class="collection-item avatar"><img src="max.png" alt="" class="circle">Sanguine</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container hide-on-med-and-down">
+                <div class="" id="management-part">
+                    <div class="management-member h-margin-balance gray-border white">
+                        <div class="management-pic center">
+                            <img class="m-pic" src="confused.png" />
+                        </div>
+                        <div class="flow-text center">
+                            <span>Owner</span><br />
+                            George Miller
+                        </div>
+                    </div>
+                    <div class="management-member h-margin-balance gray-border white">
+                        <div class="management-pic center">
+                            <img class="m-pic" src="pinkguy.jpg" />
+                        </div>
+                        <div class="flow-text center">
+                            <span>Executive Producer</span><br />
+                            Ligma Bölz
+                        </div>
+                    </div>
+                    <div class="management-member h-margin-balance gray-border white">
+                        <div class="management-pic center">
+                            <img class="m-pic" src="rusty.png" />
+                        </div>
+                        <div class="flow-text center">
+                            <span>Head Security</span><br />
+                            Sugde Dycke
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row container hide-on-large-only">
+                <div class="col s12 m12 management-member white gray-border">
+                    <div class="management-pic center">
+                        <img class="m-pic" src="confused.png" />
+                    </div>
+                    <div class="flow-text center">
+                        <span>Owner</span><br />
+                        George Miller
+                    </div>
+                </div>
+                <div class="col s12 m12 management-member white gray-border">
+                    <div class="management-pic center">
+                        <img class="m-pic" src="pinkguy.jpg" />
+                    </div>
+                    <div class="flow-text center">
+                        <span>Executive Producer</span><br />
+                        Ligma Bölz
+                    </div>
+                </div>
+                <div class="col s12 m12 management-member white gray-border">
+                    <div class="management-pic center">
+                        <img class="m-pic" src="rusty.png" />
+                    </div>
+                    <div class="flow-text center">
+                        <span>Head Security</span><br />
+                        Sugde Dycke
+                    </div>
+                </div>
+            </div>
+            <footer class="row">
+                <div class="col s12">
+                    <span class="right" id="footer-text">Address: Danau Matana street D.II No. 52</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="register-handler.js"></script>
+    <script>
+        const Calendar = document.querySelector('.datepicker');
+        M.Datepicker.init(Calendar, {
+            format: 'dd-mmmm-yyyy',
+            showClearBtn: true,
+            i18n: {
+                clear: 'remove',
+                done: 'yes',
+                cancel: 'no'
+            }
+        })
+        $(document).ready(
+            function () {
+                if (isLoggedin()) {
+                    userPageSetup(document.getElementById("username"),
+                        document.getElementById("profession"),
+                        document.getElementById("type"),
+                        document.getElementById("desc"));
+
+                    navbarLoggedSetup(document.getElementById("main-page-nav"),
+                        document.getElementById("jobs-page-nav"),
+                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("help-page-nav"),
+                        document.getElementById("admin-page-nav")
+                    )
+                }
+                else {
+                    navbarSetup(document.getElementById("main-page-nav"),
+                        document.getElementById("jobs-page-nav"),
+                        document.getElementById("edit-profile-page-nav"),
+                        document.getElementById("help-page-nav"),
+                        document.getElementById("admin-page-nav"))
+                }
+            }
+        );
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
@@ -12,14 +12,29 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Google SSO-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="532806672714-cvlv29fslt2o276jirr7k1lqoeeubsne.apps.googleusercontent.com">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!---->
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.chips');
+            var instances = M.Chips.init(elems);
+        });
+        $(document).ready(function () {
+            $('select').material_select();
+            $('.datepicker').datepicker({ format: "dd/mm/yyyy" });
+        });
+    </script>
+    <!---->
 
     <title></title>
     <style>
@@ -103,6 +118,10 @@
             max-height: 40rem;
         }
 
+        #members-list {
+            max-height: 35rem;
+        }
+
         #profile-pic {
             width: 100%;
             height: auto;
@@ -126,6 +145,25 @@
             color: #fff;
             font-size: 2.1rem;
         }
+
+        .member-list-opt {
+            padding-bottom: 0vh !important;
+        }
+
+        #member-profile-pic {
+            width: 100%;
+            height: auto;
+        }
+
+        #member-brief-profile {
+            max-height: 10%;
+            overflow: auto;
+        }
+
+        #member-desc {
+            height: 30vh;
+            overflow: auto;
+        }
     </style>
 </head>
 <body>
@@ -146,10 +184,18 @@
             </nav>
         </header>
         <div id="body-footer">
-            <div id="main-part" class="container row">
+            <div class="container row">
                 <div class="col s12 m5 main-part-unit">
-                    <h3 class="font-style">Taken jobs</h3>
-                    <hr />
+                    <div class="input-field">
+                        <select id="inpSort">
+                            <option value="0">Last posted</option>
+                            <option value="1">Last taken</option>
+                            <option value="2">Last finished</option>
+                        </select>
+                        <label for="inpSort">
+                            Sort by
+                        </label>
+                    </div>
                     <div class="scrollable" id="jobs-list">
                         <div class="card blue-grey darken-1">
                             <div class="card-image">
@@ -199,16 +245,16 @@
                         </div>
                     </div>
                 </div>
-                <div id="profile" class="col s12 m5 flow-text offset-m2 main-part-unit">
+                <div class="col s12 m5 flow-text offset-m2 main-part-unit">
                     <div class="row">
                         <div class="col s8 offset-s2 m6">
                             <img id="profile-pic" src="Logo.png" alt="bruh" />
                         </div>
                         <div class="col s8 offset-s2 m6 flow-text font-style">
                             <div id="brief-profile">
-                                <span id="username">Username </span><br />
-                                <span id="profession">Profession </span><br />
-                                <span id="type">Member type </span><br />
+                                Username <br />
+                                Profession <br />
+                                Member type <br />
                             </div>
                         </div>
                     </div>
@@ -223,15 +269,103 @@
                         Phasellus bibendum dictum pretium.
                     </div>
                     <div class="row">
-                        <a href="edit-profile-page.html" class="waves-effect waves-light btn left indigo s5"><i class="material-icons left">settings</i>Settings</a>
-                        <a href="#" id="logout-button" class="waves-effect waves-light btn right red s5"><i class="material-icons left">exit_to_app</i>Logout</a>
+                        <a class="waves-effect waves-light btn left indigo s5"><i class="material-icons left">settings</i>Settings</a>
+                        <a id="logout-button" class="waves-effect waves-light btn right red s5"><i class="material-icons left">exit_to_app</i>Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container row">
+                <div class="col s12 m5 main-part-unit">
+                    <div class="scrollable" id="members-list">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title font-style">Username</span>
+                                <p class="font-style">
+                                    <span>
+                                        Profession
+                                    </span> <br />
+                                    <span>
+                                        Member type
+                                    </span> <br />
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <div class="row">
+                                    <a class="waves-effect waves-light btn left indigo s5 bottom">Open</a>
+                                    <a class="waves-effect waves-light btn right indigo s5 bottom">Quick View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title font-style">Username</span>
+                                <p class="font-style">
+                                    <span>
+                                        Profession
+                                    </span> <br />
+                                    <span>
+                                        Member type
+                                    </span> <br />
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <div class="row">
+                                    <a class="waves-effect waves-light btn left indigo s5 bottom">Open</a>
+                                    <a class="waves-effect waves-light btn right indigo s5 bottom">Quick View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title font-style">Username</span>
+                                <p class="font-style">
+                                    <span>
+                                        Profession
+                                    </span> <br />
+                                    <span>
+                                        Member type
+                                    </span> <br />
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <div class="row">
+                                    <a class="waves-effect waves-light btn left indigo s5 bottom">Open</a>
+                                    <a class="waves-effect waves-light btn right indigo s5 bottom">Quick View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m5 flow-text offset-m2 main-part-unit">
+                    <div class="row">
+                        <h3 class="font-style">Quick View</h3>
+                        <hr />
+                        <div class="col s8 offset-s2 m6">
+                            <img id="member-profile-pic" src="Logo.png" alt="bruh" />
+                        </div>
+                        <div class="col s8 offset-s2 m6 flow-text font-style">
+                            <div id="member-brief-profile">
+                                Username <br />
+                                Profession <br />
+                                Member type <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="font-style" id="member-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Fusce efficitur ligula dui, sit amet laoreet neque aliquet in.
+                        Cras ut dolor in dui molestie ullamcorper et non massa. Suspendisse ut ultricies nisi.
+                        Cras mollis hendrerit diam, sit amet tristique ex semper porttitor.
+                        Cras metus risus, luctus vitae dignissim id, iaculis nec tortor. Sed non sagittis risus.
+                        Pellentesque sit amet elit quis est hendrerit efficitur. Suspendisse cursus sagittis metus eu porta.
+                        Morbi non blandit nibh. Pellentesque ut mauris at odio posuere iaculis vel id turpis.
+                        Phasellus bibendum dictum pretium.
                     </div>
                 </div>
             </div>
             <footer class="row">
                 <div class="col s12">
                     <span class="right" id="footer-text">Address: Danau Matana street D.II No. 52</span>
-
                 </div>
             </footer>
         </div>
@@ -241,9 +375,20 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="register-handler.js"></script>
     <script>
+        const Calendar = document.querySelector('.datepicker');
+        M.Datepicker.init(Calendar, {
+            format: 'dd-mmmm-yyyy',
+            showClearBtn: true,
+            i18n: {
+                clear: 'remove',
+                done: 'yes',
+                cancel: 'no'
+            }
+        })
         $(document).ready(
             function () {
-                $("#logout-button").click(logout());
+                $("#logout-button").click(logout())
+
                 if (isLoggedin()) {
                     userPageSetup(document.getElementById("username"),
                         document.getElementById("profession"),
@@ -262,16 +407,10 @@
                         document.getElementById("jobs-page-nav"),
                         document.getElementById("edit-profile-page-nav"),
                         document.getElementById("help-page-nav"),
-                        document.getElementById("admin-page-nav"));
+                        document.getElementById("admin-page-nav"))
                 }
             }
         );
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
-        }
     </script>
 </body>
 </html>
