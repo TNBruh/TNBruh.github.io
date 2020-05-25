@@ -243,7 +243,7 @@
     <script>
         $(document).ready(
             function () {
-                $("#logout-button").click(logout());
+                $("#logout-button").click(function () { logout() });
                 if (isLoggedin()) {
                     userPageSetup(document.getElementById("username"),
                         document.getElementById("profession"),

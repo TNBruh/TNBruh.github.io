@@ -210,8 +210,8 @@ function navbarLoggedSetup(mainPage, jobPage, settingPage, helpPage, adminPage) 
 
 function navbarSetup(mainPage, jobPage, settingPage, helpPage, adminPage) {
     mainPage.setAttribute("href", "index.html");
-    jobPage.style.display = "none";
-    settingPage.style.display = "none";
     helpPage.setAttribute("href", "help-page.html");
     adminPage.setAttribute("href", "admin-page.html");
+    jobPage.style.display = "none";
+    settingPage.style.display = "none";
 }
