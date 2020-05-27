@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Google SSO-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="532806672714-m824dd6kdn75ifea35f9u8ojhcrvb5f8.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="532806672714-cvlv29fslt2o276jirr7k1lqoeeubsne.apps.googleusercontent.com">
 
     <!---->
     <script type="text/javascript"
@@ -28,6 +28,10 @@
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.chips');
             var instances = M.Chips.init(elems);
+        });
+        $(document).ready(function () {
+            $('select').material_select();
+            $('.datepicker').datepicker({ format: "dd/mm/yyyy" });
         });
     </script>
     <!---->
@@ -167,14 +171,15 @@
     <div id="header-body-footer" class="">
         <header>
             <nav class="nav-wrapper indigo">
-                <img id="header-logo" class="hide-on-small-only left" src="Logo.png" alt="bruh" />
-                <a href="#!" id="brand" class="hide-on-small-only left font-style">Azure's Embrace</a>
+                <img id="header-logo" class="left" src="Logo.png" alt="bruh" />
+                <a href="#!" id = "brand" class="hide-on-small-only left font-style">Azure's Embrace</a>
                 <ul class="right">
-                    <li><a id="main-page-nav" href="main-page.html">Home</a></li>
-                    <li><a id="jobs-page-nav" href=#>Jobs</a></li>
-                    <li><a id="setting-page-nav" href=#>Account</a></li>
-                    <li><a id="help-page-nav" href="help-page.html">Help</a></li>
-                    <li><a id="admin-page-nav" href="admin-page.html">Admin</a></li>
+                    <li><a href="main-page.html">Home</a></li>
+                    <li><a href=#>Jobs</a></li>
+                    <li><a href=#>Account</a></li>
+                    <li><a href="help-page.html">Help</a></li>
+                    <li><a href="admin-page.html">Admin</a></li>
+                    <li><a href="https://github.com/TNBruh/TNBruh.github.io/blob/master/quiz.md">Quiz</a></li>
                 </ul>
             </nav>
         </header>
@@ -250,6 +255,7 @@
                                 <span id="username">Username </span><br />
                                 <span id="profession">Profession </span><br />
                                 <span id="type">Member type </span><br />
+                                <span id="rank">Sanguine Bronze </span>
                             </div>
                         </div>
                     </div>
@@ -265,7 +271,7 @@
                     </div>
                     <div class="row">
                         <a class="waves-effect waves-light btn left indigo s5"><i class="material-icons left">settings</i>Settings</a>
-                        <a id="logout-button" class="waves-effect waves-light btn right red s5"><i class="material-icons left">exit_to_app</i>Logout</a>
+                        <a href="login.html" class="waves-effect waves-light btn right red s5"><i class="material-icons left">exit_to_app</i>Logout</a>
                     </div>
                 </div>
             </div>
@@ -368,7 +374,6 @@
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="register-handler.js"></script>
     <script>
         const Calendar = document.querySelector('.datepicker');
         M.Datepicker.init(Calendar, {
@@ -380,33 +385,6 @@
                 cancel: 'no'
             }
         })
-        $(document).ready(
-            function () {
-
-                if (isLoggedin()) {
-                    console.log("logged setup");
-                    userPageSetup(document.getElementById("username"),
-                        document.getElementById("profession"),
-                        document.getElementById("type"),
-                        document.getElementById("desc"));
-
-                    navbarLoggedSetup(document.getElementById("main-page-nav"),
-                        document.getElementById("jobs-page-nav"),
-                        document.getElementById("setting-page-nav"),
-                        document.getElementById("help-page-nav"),
-                        document.getElementById("admin-page-nav")
-                    )
-                }
-                else {
-                    console.log("setup");
-                    navbarSetup(document.getElementById("main-page-nav"),
-                        document.getElementById("jobs-page-nav"),
-                        document.getElementById("setting-page-nav"),
-                        document.getElementById("help-page-nav"),
-                        document.getElementById("admin-page-nav"))
-                }
-            }
-        );
     </script>
 </body>
 </html>
