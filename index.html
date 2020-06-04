@@ -111,6 +111,10 @@
         .g-signin2 {
             width: 100%;
         }
+        #chat{
+            height: 20rem;
+            overflow-y:auto;
+        }
     </style>
 </head>
 <body>
@@ -164,11 +168,11 @@
                     <div class="row">
                         <a id="login-button" class="col waves-effect waves-light btn left indigo s5"><i class="material-icons left">send</i>Login</a>
                         <a href="register.html" class="col waves-effect waves-light btn right indigo s5"><i class="material-icons left">mode_edit</i>Register</a>
-                       
+
                     </div>
 
                 </div>
-                <div class="col s12 m12 flow-text" id="news-part">
+                <div class="col s12 m12 flow-text main-part-unit" id="news-part">
                     <p class="font-style"> News </p>
                     <div id="news">
                         <div class="card blue-grey darken-1">
@@ -204,6 +208,17 @@
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 flow-text" id="chat-div">
+                    <h3>Chat</h3>
+                    <div class="col s12 m12 white showbox" id="chat">
+                    </div>
+                    <div class="col s12 m12">
+                        <form>
+                            <input type="text" id="textinp"><br><br>
+                        </form>
+                        <button type="button" onclick="writeToScreen(document.getElementById('textinp').value)">Click Me!</button>
                     </div>
                 </div>
             </div>
@@ -269,6 +284,12 @@
         function GotoReg() {
             location.replace("register.html");
         }
+    </script>
+    <!--script for new shit-->
+    <script src="WebSocketDemo.js"> </script>
+    <script>
+        window.addEventListener("load", (event) => { init("chat") });
+
     </script>
 
 </body>
