@@ -1,0 +1,6 @@
+Python
+Django
+NodeJS
+Draw.io
+WordPress
+Elementor

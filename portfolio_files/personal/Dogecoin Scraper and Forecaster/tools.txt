@@ -1,0 +1,6 @@
+TensorFlow
+RNN
+Python
+Selenium
+Seaborn
+Jupyter Notebook

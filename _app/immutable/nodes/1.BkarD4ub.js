@@ -1,0 +1,3 @@
+import{s as r,n as s}from"../chunks/scheduler.CCkvOnEv.js";import{S as l,i as o,g as c,h as d,A as f,k as m,a as x,f as h}from"../chunks/index.CnQFu1FE.js";function v(n){let e,a=`<div class="flex-1"></div>
+    ;3
+    <div class="flex-1"></div>`;return{c(){e=c("div"),e.innerHTML=a,this.h()},l(t){e=d(t,"DIV",{class:!0,"data-svelte-h":!0}),f(e)!=="svelte-1n4teb9"&&(e.innerHTML=a),this.h()},h(){m(e,"class","flex flex-row place-items-center items-center text-white font-bold text-2xl text-center")},m(t,i){x(t,e,i)},p:s,i:s,o:s,d(t){t&&h(e)}}}class _ extends l{constructor(e){super(),o(this,e,null,v,r,{})}}export{_ as component};

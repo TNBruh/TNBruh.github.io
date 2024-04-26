@@ -1,0 +1,8 @@
+Kali Linux
+NMap
+WireShark
+MetaSploit
+Gobuster
+Burpsuite
+SQLMap
+Frida

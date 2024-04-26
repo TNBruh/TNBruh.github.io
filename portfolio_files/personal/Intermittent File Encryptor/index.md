@@ -1,0 +1,5 @@
+#### The program intermittently encrypts a file; it means that the program doesn’t encrypt the entire file but partially within a certain number of hop; or the first or latter half of the file, depending on the settings.
+
+This is actually one of the malwares I made. Its a multi-threaded ransomware that can technically uniquely identify a victim as well and does so without the need of internet. I don't immediately write this as "ransomware" in my portfolio because people are too easily scared when they're around "bad things".
+
+As for how this works, the basics aren't complicated. But the evasion is. There's 1 thread that does the house-keeping and the rest does the encrypting. The "general thread" generates a unique symmetrical encryption key and creates other threads; afterwards, it distributes the key to them and start scouring for files to encrypt. Then it creates a file that's required for decryption; in it, contains the symmetrical encryption key encrypted by the operator's public key of choice. The rest of the threads encrypt files with said symmetrical encryption key. 

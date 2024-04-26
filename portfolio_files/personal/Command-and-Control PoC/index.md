@@ -1,0 +1,5 @@
+#### A small proof of concept of how easy it is for someone with enough technical knowledge to make their own command-and-control software with their own standards under the assumption that the target machine is disarmed.
+
+The Mirai malware caught my interest at the time. So I thought that I should read up the source code. The concept is simpler than I thought. Although, after reading it, I wanted to play around with what I could make with the TCP library in Rust; and I made a simple C2 PoC. The way it bypasses NAT is by never ending the TCP stream. It works if it works. It only takes commands from the master server and run it in terminal. I also tried making one in go to try out its channel feature.
+
+It's just the PoC. I didn't make any antivirus evasion or anything too fancy, and just wanted to make the basics. Though, I could probably build it up from there with enough reading resources. I heard that there's a `Botnet Bible`; there could be something worth to read there.

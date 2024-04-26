@@ -1,0 +1,3 @@
+#### Originally made for server moderation in order to not rely on 3rd party bots. Repurposed for personal uses.
+
+The server I was moderating needed a bit of convenience on executing some basic moderation tasks, such as warning and mass targeted deletion. I had a bit of free time, so I decided to spend a bit of it to develop the bot. It was helpful until one day the server entered its winter phase; the bot wasn't needed anymore, so I repurposed it to be played around.
